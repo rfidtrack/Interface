@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body bgcolor="#999999">
-<?php include 'links.html'; include '../credentials.php';?>
+<?php include 'links.html'; include 'credentials.php';?>
 <script type="text/javascript" src="./widgets.js"></script>
 <?php
 

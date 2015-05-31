@@ -6,7 +6,7 @@
     <script type="text/javascript" src="./widgets2v2.js"></script>
     <body bgcolor="#999999">
 	<?php
-		include '../credentials.php';
+		include 'credentials.php';
 
 		$addr = $_POST['addr'];
 		$name = $_POST['name'];

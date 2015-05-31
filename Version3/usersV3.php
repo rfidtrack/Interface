@@ -5,7 +5,7 @@
     </head>
     <body bgcolor="#999999">
 
-<?php include 'links.html'; include '../credentials.php';?>
+<?php include 'links.html'; include 'credentials.php';?>
 <script type="text/javascript" src="./widgets2v2.js"></script>
 
 <center><h1>Tags Currently Assigned in the System</h1>

@@ -7,7 +7,7 @@
     <body bgcolor="#999999">
 	<?php
 		include 'links.html';
-		include '../credentials.php';
+		include 'credentials.php';
 		$link = mysqli_connect("$path", "$username", "$password", "$db");
 				
 		/* check connection */
