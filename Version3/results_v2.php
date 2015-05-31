@@ -4,11 +4,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body bgcolor="#999999">
-<?php include 'links.html';?>
+<?php include 'links.html'; include '../credentials.php';?>
 <script type="text/javascript" src="./widgets.js"></script>
 <?php
 
-	$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
+	$link = mysqli_connect("$path", "$username", "$password", "$db");
 	
 	/* check connection */
 	if (mysqli_connect_errno()) {
