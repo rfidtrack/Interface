@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Tag</title>
+</head>
+    <body>
+        <center>
+        <script type="text/javascript" src="./widgets2v2.js"></script>
+        <form id="AddForm" action="adddatareader.php" method="Post" name="AddReaderForm" title="Add Reader" style="width:600px;min-width:600px">
+            <label for="addr">Mac Address</label><br />
+        		<input type="text" name="addr" id="addr" class="required" rel="1" />
+                <br />
+            <label for="name">Location Name</label><br />
+        		<input type="text" name="name" id="name" rel="2" />
+            <!--     <br />
+            <label for="role">Role</label><br />
+            	<input type="text" name="role" id="role" rel="3"><br />
+        	<label for="colour">Color</label><br />
+            	<select name="colour" id="colour" rel="4" />
+            		<option value="#FF0000">Red</option>
+            		<option value="#800000">Maroon</option>
+            		<option value="#FFFF00">Yellow</option>
+            		<option value="#808000">Olive</option>
+            		<option value="#00FF00">Lime</option>
+            		<option value="#008000">Green</option>
+            		<option value="#00FFFF">Aqua</option>
+            		<option value="#008080">Teal</option>
+            		<option value="#0000FF">Blue</option>
+            		<option value="#000080">Navy</option>
+            		<option value="#FF00FF">Fuchsia</option>
+            		<option value="#800080">Purple</option>
+        		</select> -->
+                <br/><br/>
+                <input type="submit" id="addReadersSubmit" value="Submit">
+        </form>
+        <a href="readers.php"><button>Cancel</button></a>
+        </center>
+    </body>
+</html>
