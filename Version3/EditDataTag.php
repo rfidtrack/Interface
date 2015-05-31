@@ -6,6 +6,7 @@
     <script type="text/javascript" src="./widgets2v2.js"></script>
     <body bgcolor="#999999">
 	<?php
+		include '../credentials.php';
 
 		$id = $_POST['id'];
 		$addr = $_POST['addr'];
@@ -13,7 +14,7 @@
 		$role = $_POST['role'];
 		$color = $_POST['colour'];
 
-		$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
+		$link = mysqli_connect("$path", "$username", "$password", "$db");
 		
 		/* check connection */
 		if (mysqli_connect_errno()) {
@@ -49,6 +50,5 @@
 		}
 		mysqli_close($link);
 	?>
-	
 	</body>
 </html>

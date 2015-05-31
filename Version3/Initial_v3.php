@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
 
-    <?php include 'links.html';?>
+    <?php include 'links.html'; include '../credentials.php';?>
     <script type="text/javascript" src="./widgets.js"></script>
   	<style type="text/css">
     	#editor {
@@ -21,7 +21,8 @@
 <form action="results_v2.php" method="post" style="margin-top:20px">    
 <select id="tag_id" name="tag_id[]" multiple="multiple">
 <?php
-		$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
+		//include '../credentials.php';
+		$link = mysqli_connect("$path", "$username", "$password", "$db");
 	
 	/* check connection */
 	if (mysqli_connect_errno()) {
@@ -43,7 +44,7 @@
 </select>
 <select id="reader_id" name="reader_id[]" multiple="multiple">
 <?php
-		$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
+		$link = mysqli_connect("$path", "$username", "$password", "$db");
 	
 	/* check connection */
 	if (mysqli_connect_errno()) {

@@ -7,9 +7,16 @@
     <body bgcolor="#999999">
 	<?php
 		include 'links.html';
+		include '../credentials.php';
+		$link = mysqli_connect("$path", "$username", "$password", "$db");
+				
+		/* check connection */
+		if (mysqli_connect_errno()) {
+		    printf("Connect failed: %s\n", mysqli_connect_error());
+		    exit();
+		}
 		if (isset($_POST['delete']))
 		{
-			
 			if (!isset($_POST['select']))
 			{
 				echo "<h2>No Selections Made</h2>";
@@ -18,13 +25,6 @@
 			elseif (isset($_POST['select']))
 			{
 				$id = $_POST['select'];
-				$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
-				
-				/* check connection */
-				if (mysqli_connect_errno()) {
-				    printf("Connect failed: %s\n", mysqli_connect_error());
-				    exit();
-				}
 
 				for ($i=0; $i < count($id) ; $i++)
 				{
@@ -38,7 +38,6 @@
 						printf("Error Message: %s\n", mysqli_error($link));
 					}
 				}
-				mysqli_close($link);
 			}
 			echo '<script type="text/javascript" src="./widgets2v2.js"></script>';
 			echo "<a href='readers.php'><button>Return</button></a>";
@@ -46,7 +45,6 @@
 
 		elseif (isset($_POST['add']))
 		{
-			include 'links.html';
 			include 'addReaders.html';
 		}
 
@@ -71,14 +69,6 @@
 				}
 				elseif (count($id) == 1)
 				{
-					$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
-						
-					/* check connection */
-					if (mysqli_connect_errno()) {
-					    printf("Connect failed: %s\n", mysqli_connect_error());
-					    exit();
-					}
-
 					for ($i=0; $i < count($id) ; $i++)
 					{
 						 //echo $id[$i] . '<br/>';
@@ -104,10 +94,10 @@
 						echo '<input type="submit" id="selectSubmitReader" value="Submit Edits"></form>';
 						echo "<a href='readers.php'><button>Cancel</button></a></center>";
 					}
-					mysqli_close($link);
 				}
 			}
 		}
+		mysqli_close($link);
 	?>
 	</body>
 </html>

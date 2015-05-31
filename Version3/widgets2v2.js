@@ -12,7 +12,7 @@
 
         $("#add, #edit, #delete, #addTagsSubmit, #selectSubmitTag, #addReadersSubmit, #selectSubmitReader").button();
         $("button").button();
-        $("#colour").selectmenu();
+        $("#colour").selectmenu({ width : 'auto'});
         $("#addr, #name, #role").autocomplete();
 
 /*    $("#tagForm").validate({

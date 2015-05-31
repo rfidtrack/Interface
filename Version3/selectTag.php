@@ -7,6 +7,14 @@
     <body bgcolor="#999999">
 	<?php
 		include 'links.html';
+		include '../credentials.php';
+		$link = mysqli_connect("$path", "$username", "$password", "$db");
+				
+		/* check connection */
+		if (mysqli_connect_errno()) {
+		    printf("Connect failed: %s\n", mysqli_connect_error());
+		    exit();
+		}
 		if (isset($_POST['delete']))
 		{
 			
@@ -18,13 +26,6 @@
 			elseif (isset($_POST['select']))
 			{
 				$id = $_POST['select'];
-				$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
-				
-				/* check connection */
-				if (mysqli_connect_errno()) {
-				    printf("Connect failed: %s\n", mysqli_connect_error());
-				    exit();
-				}
 
 				for ($i=0; $i < count($id) ; $i++)
 				{
@@ -46,7 +47,6 @@
 
 		elseif (isset($_POST['add']))
 		{
-			include 'links.html';
 			include 'addTags.html';
 		}
 
@@ -71,18 +71,9 @@
 				}
 				elseif (count($id) == 1)
 				{
-					$link = mysqli_connect("localhost", "root", "RfIdTr@cker", "rfid2");
-						
-					/* check connection */
-					if (mysqli_connect_errno()) {
-					    printf("Connect failed: %s\n", mysqli_connect_error());
-					    exit();
-					}
-
 					for ($i=0; $i < count($id) ; $i++)
 					{
-						 //echo $id[$i] . '<br/>';
-						echo '<center><form name="editForm" action="EditData.php" method="post">';
+						echo '<center><form name="editForm" action="EditDataTag.php" method="post">';
 
 						$query = "SELECT addr, name, role, colour FROM lt_tag WHERE id='$id[$i]'";
 						$result = mysqli_query($link, $query);
@@ -95,7 +86,7 @@
 							    '<label for="name">Person Assigned</label><br /><input type="text" name="name" value="' . $row_sections['name'] . '"><br/>' .
 							    '<label for="role">Role</label><br /><input type="text" name="role" value="' . $row_sections['role'] . '"><br/>' .
 							    '<label for="colour">Color</label><br />
-							    <select id="colour" name="colour >
+							    <select id="colour" name="colour">
 							    <option value="' . $row_sections['colour'] . '">Current</option>
 			            		<option value="#FF0000">Red</option>
 			            		<option value="#800000">Maroon</option>
