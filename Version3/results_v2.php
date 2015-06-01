@@ -73,7 +73,7 @@
 	//Query with nothing selected
 	if(isset($tag_id) == false && isset($reader_id) == false && $_POST['alternateS'] == null && $_POST['timepickerS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -85,7 +85,7 @@
 	//Query with just tag selection
 	if(isset($tag_id) && isset($reader_id) == false && $_POST['alternateS'] == null && $_POST['timepickerS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -97,10 +97,10 @@
 	//Query with just reader selection
 	if(isset($reader_id) && isset($tag_id) == false && $_POST['alternateS'] == null && $_POST['timepickerS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
-							 ON lt_position.xpos = lt_reader.xpos 
+							 ON lt_position.xpos = lt_reader.xpos AND lt_position.ypos = lt_reader.ypos
 							 ORDER BY Entry";
 		$rtable++;
 		//echo '<br/>Test readers';
@@ -109,7 +109,7 @@
 	//Query with tag and reader selection
 	if(isset($tag_id) && isset($reader_id) && $_POST['alternateS'] == null && $_POST['timepickerS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -121,7 +121,7 @@
 	//Query with just start date set
 	if(isset($alternateS) && $_POST['timepickerS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -134,7 +134,7 @@
 	//Query with just start time set
 	if(isset($timepickerS) && $_POST['alternateS'] == null && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -147,7 +147,7 @@
 	//Query with just end date set
 	if(isset($alternateE) && $_POST['timepickerS'] == null && $_POST['alternateS'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -160,7 +160,7 @@
 	//Query with just end time set
 	if(isset($timepickerE) && $_POST['timepickerS'] == null && $_POST['alternateS'] == null && $_POST['alternateE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -173,7 +173,7 @@
 	//Query with start date and start time set
 	if(isset($alternateS, $timepickerS) && $_POST['alternateE'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -186,7 +186,7 @@
 	//Query with end date and end time set
 	if(isset($alternateE, $timepickerE) && $_POST['alternateS'] == null && $_POST['timepickerS'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -199,7 +199,7 @@
 	//Query with start date and end time set
 	if(isset($alternateS, $timepickerE) && $_POST['alternateE'] == null && $_POST['timepickerS'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -212,7 +212,7 @@
 	//Query with end date and start time set
 	if(isset($alternateE, $timepickerS) && $_POST['alternateS'] == null && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -225,7 +225,7 @@
 	//Query with start date and end date set
 	if(isset($alternateS, $alternateE) && $_POST['timepickerE'] == null && $_POST['timepickerS'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -238,7 +238,7 @@
 	//Query with start time and end time set
 	if(isset($timepickerS, $timepickerE) && $_POST['alternateS'] == null && $_POST['alternateE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -251,7 +251,7 @@
 	//Query with start date, start time, and end date set
 	if(isset($alternateS, $timepickerS, $alternateE) && $_POST['timepickerE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -264,7 +264,7 @@
 	//Query with start date, end time, and end date set
 	if(isset($alternateS, $timepickerE, $alternateE) && $_POST['timepickerS'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -277,7 +277,7 @@
 	//Query with start date, start time, and end time set
 	if(isset($alternateS, $timepickerS, $timepickerE) && $_POST['alternateE'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -290,7 +290,7 @@
 	//Query with start time, end time, and end date set
 	if(isset($alternateE, $timepickerS, $timepickerE) && $_POST['alternateS'] == null)
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -303,7 +303,7 @@
 	//Query with start date, start time, end date, and end time set
 	if(isset($alternateS, $alternateE, $timepickerS, $timepickerE))
 	{
-		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location
+		$query = "SELECT lt_position.id AS Entry, tag_id, DATE_FORMAT(reported, '%W, %e %M, %Y') AS Date, DATE_FORMAT(reported, '%r')  AS Time, lt_reader.name AS Location, lt_reader.id AS Reader_ID
 							 FROM lt_position
 							 JOIN lt_reader
 							 ON lt_position.xpos = lt_reader.xpos 
@@ -329,19 +329,19 @@
 		    					  <td>' . $row_sections['Time'] . '</td><td>' . $row_sections['Location'] . '</td></tr>';
 		   	}
 		   	//Location(s) selected but no tag(s) selected
-		   	elseif (isset($reader_id) && in_array($row_sections['Location'], $reader_id) && isset($tag_id) == false)
+		   	elseif (isset($reader_id) && in_array($row_sections['Reader_ID'], $reader_id) && isset($tag_id) == false)
 		   	{
 		   		echo '<tr align="center"><td>' . $row_sections['Entry'] . '</td><td>' . $row_sections['tag_id'] . '</td><td>' . $row_sections['Date'] . '</td>
 		    					  <td>' . $row_sections['Time'] . '</td><td>' . $row_sections['Location'] . '</td></tr>';
 		   	}
 		   	//Both Tag(s) and Location(s) selected
-		   	elseif (isset($tag_id) && in_array($row_sections['tag_id'], $tag_id) && isset($reader_id) && in_array($row_sections['Location'], $reader_id))
+		   	elseif (isset($tag_id) && in_array($row_sections['tag_id'], $tag_id) && isset($reader_id) && in_array($row_sections['Reader_ID'], $reader_id))
 		   	{
 		   		echo '<tr align="center"><td>' . $row_sections['Entry'] . '</td><td>' . $row_sections['tag_id'] . '</td><td>' . $row_sections['Date'] . '</td>
 		    					  <td>' . $row_sections['Time'] . '</td><td>' . $row_sections['Location'] . '</td></tr>';
 		   	}
 		   	//Neither Tag(s) nor Location(s) selected
-		   	elseif(isset($tag_id) == false)
+		   	elseif(isset($tag_id) == false && isset($reader_id) == false)
 		   	{
 				echo '<tr align="center"><td>' . $row_sections['Entry'] . '</td><td>' . $row_sections['tag_id'] . '</td><td>' . $row_sections['Date'] . '</td>
 		    					 <td>' . $row_sections['Time'] . '</td><td>' . $row_sections['Location'] . '</td></tr>';					   

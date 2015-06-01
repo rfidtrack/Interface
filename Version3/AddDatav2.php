@@ -26,8 +26,8 @@
 		if($result != NULL){
 
 			$id = mysqli_insert_id($link);
-			echo $id;
 			echo "<h2>New Tag Added to the Database</h2>";
+			echo "ID: " . $id . "<br/>";
 			echo "Mac Address: " . $addr . "<br/>";
 			echo "Name: " . $name . "<br/>";
 			echo "Role: " . $role . "<br/>";
@@ -41,6 +41,7 @@
 		}
 		mysqli_close($link);
 	?>
+	<script type="text/javascript" src="./widgets2v2.js"></script>
 	<a href='usersV3.php'><button>Return</button></a>
 	</body>
 </html>

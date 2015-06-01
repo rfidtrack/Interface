@@ -53,13 +53,13 @@
 	}
 	
 	
-	$query = "SELECT name, xpos FROM lt_reader ORDER BY name";
+	$query = "SELECT name, id FROM lt_reader ORDER BY name";
 	$result = mysqli_query($link, $query);
 		//$row = mysqli_num_rows($result);
 
 	while($row_sections = mysqli_fetch_array($result))
 	{
-	    echo '<option value="' . $row_sections['xpos'] . '">' . $row_sections['name'] . '</option>';
+	    echo '<option value="' . $row_sections['id'] . '">' . $row_sections['name'] . '</option>';
 	}
 	//mysqli_close($link);	
 ?>

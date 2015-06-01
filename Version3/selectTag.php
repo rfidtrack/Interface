@@ -33,7 +33,7 @@
 					$result = mysqli_query($link, $query);
 					if($result){
 
-						echo "<h2>Record with id $id[$i] deleted successfully</h2><br/>";
+						echo "<h2>Record with id $id[$i] deleted successfully</h2>";
 					}
 					elseif (!$result) {
 						printf("Error Message: %s\n", mysqli_error($link));
