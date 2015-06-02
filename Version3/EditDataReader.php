@@ -29,16 +29,6 @@
 			echo "Edits Submitted";
 			echo '<META http-equiv="refresh" content="2;URL=readers.php">';
 
-			/*$id = mysqli_insert_id($link);
-			echo $id;
-			echo "<h2>New Tag Added to the Database</h2>";
-			echo "Mac Address: " . $addr . "<br/>";
-			echo "Name: " . $name . "<br/>";
-			echo "Role: " . $role . "<br/>";
-			echo "Color: " . $color . "<br/>";
-			echo "";*/
-			
-			//mysqli_free_result($result);
 		}
 		elseif (!$result) {
 			printf("Error Message: %s\n", mysqli_error($link));
