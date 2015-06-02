@@ -25,7 +25,6 @@
 		{
 			$maxx = $rows['maxx'] + 1;
 			$maxy = $rows['maxy'] + 1;
-			echo $maxx.','.$maxy;
 		}
 		$query = "INSERT INTO lt_reader (addr, name, map_id, xpos, ypos) VALUES ('$addr', '$name', '10', '$maxx', '$maxy')";
 		$result = mysqli_query($link, $query);
