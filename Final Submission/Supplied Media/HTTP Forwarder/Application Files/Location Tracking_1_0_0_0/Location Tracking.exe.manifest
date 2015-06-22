@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Location Tracking.exe" version="1.0.0.0" publicKeyToken="b7baebc81ef06e05" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="Motor mechanic.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Location Tracking" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Location Tracking.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Location Tracking.exe" size="67984">
+      <assemblyIdentity name="Location Tracking" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>GuIi8uXpxaUeUw8/nF9LXs/5tcI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Location Tracking.exe.config" size="1058">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>0/IJx21+3TKFjY3RugkKoPWG4Sg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Motor mechanic.ico" size="22486">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GzPEV3XmSqy1hUw2DEHQQjJtlzo=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Monolith\Admin" issuerKeyHash="414c4ecf17b489353c1541aff92b9ab0c2fad0e9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>aTfCJVzL6z0QlapYF4XMtYn+1T0=</DigestValue></Reference></SignedInfo><SignatureValue>Z6NjG9YXU5G11RAJpo2nrxQUDkl0Z+j5eTU5HDLem5rlQxtLUkaNa6IQLl9coupN561ZMpknxyi0yB8I/DD9WALuH5lOIQjnoH82V354Nu3YZNblDfiQ/q00bNwEROsuoS1XjOB4LCkc0hY2gnUl75Aym6hr2+osepS//al/qDc=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>uXKGzTxS5vGZOdgDwMPZEA5ChAEWWEoiPCGHeyuNYgt80Z38xHXQonJiWJINMbotz9FQrPxO0sZ+f8T9iL3D8X5JTrtpWxgnsat6eeczKmosVer2d+AZeYHcZZW2ZV9aL8fyBk5iyd+65bhDlPX9PUJM15oCVHF59rNUeKpZqSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="3dd5fe89b5cc851758aa95103debcb5c25c23769" Description="" Url=""><as:assemblyIdentity name="Location Tracking.exe" version="1.0.0.0" publicKeyToken="b7baebc81ef06e05" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Monolith\Admin</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>hewkshMz/K1zYW3eI2EWVTPwfAM=</DigestValue></Reference></SignedInfo><SignatureValue>sJ30mgJA3REq99bXOvIOuUBvNbBLIYtmKmRqH58MI6jgeTxkvUat/qZpIZgxfMpNDO6QYyutSq32s1rx0O1xnOaX8dzq+AAZTaTKUJBNB9CTZ1buyGkh50sJWluyMc2S4r5VQcB3g/3prIgv12vfdz1R7EHYbVJzYtybQrGhCsY=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>uXKGzTxS5vGZOdgDwMPZEA5ChAEWWEoiPCGHeyuNYgt80Z38xHXQonJiWJINMbotz9FQrPxO0sZ+f8T9iL3D8X5JTrtpWxgnsat6eeczKmosVer2d+AZeYHcZZW2ZV9aL8fyBk5iyd+65bhDlPX9PUJM15oCVHF59rNUeKpZqSU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQaFw0DCODKq5OC2d62VxS2TANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwATQBvAG4AbwBsAGkAdABoAFwAQQBkAG0AaQBuMB4XDTE1MDMwNjIzMzQxM1oXDTE2MDMwNjA1MzQxM1owJzElMCMGA1UEAx4cAE0AbwBuAG8AbABpAHQAaABcAEEAZABtAGkAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAuXKGzTxS5vGZOdgDwMPZEA5ChAEWWEoiPCGHeyuNYgt80Z38xHXQonJiWJINMbotz9FQrPxO0sZ+f8T9iL3D8X5JTrtpWxgnsat6eeczKmosVer2d+AZeYHcZZW2ZV9aL8fyBk5iyd+65bhDlPX9PUJM15oCVHF59rNUeKpZqSUCAwEAATANBgkqhkiG9w0BAQUFAAOBgQAb/+g1sJBNefeSYTFLaXQiYhclwO3TebHxJeRbsGYTHMQIA+a+KY/bJXhTIkiu8JP/ye1cNle1KDuYve07Brq2GoFPo1eFwsQ3QljdWBWa3rnP5orUXvV9CGcwZiZKKN9OHOO52Iok5h94/sluMx9BIe3UWwFzSg7pqBl9kuatPQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
